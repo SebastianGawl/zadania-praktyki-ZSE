@@ -1,3 +1,4 @@
+
 public class SzyfrCezara {
     public static void main(String[] args) {
 
@@ -28,3 +29,4 @@ public class SzyfrCezara {
        System.out.println(arr);
     }
 }
+

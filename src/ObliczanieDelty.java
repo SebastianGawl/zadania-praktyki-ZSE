@@ -30,16 +30,15 @@ public class ObliczanieDelty {
         else
         if (delta == 0)
         {
-           int x = -b / (2 * a); System.out.printf("Mamy jedno rozwiązanie które wynosi: x = %f", x);
+            int x = -b / (2 * a); System.out.printf("Mamy jedno rozwiązanie które wynosi: x = %f", x);
 
         } else
-          if (delta > 0)
-            {
+        if (delta > 0)
+        {
             double x1 = (-b + Math.sqrt(delta)) / (2 * a);
             double x2 = (-b - Math.sqrt(delta)) / (2 * a);
             System.out.printf("Równania delty to: x1 = %f oraz x2 = %f", x1, x2);
         }
 
-        }
     }
-
+}
