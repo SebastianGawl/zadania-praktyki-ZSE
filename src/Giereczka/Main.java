@@ -6,34 +6,47 @@ public class Main extends RandomoweNumery
     public static void main(String[] args)
     {
 
-        int wynik = 100;
+        int wynik = 150;
         int NumerGry = 0;
 
         System.out.println("\n BlackJack \n\n Zasady: Z dobieranych losowych liczb [od 1 do 14] staramy się uzyskać sumę jak najbliżej 21 punktów, jednak nie przekraczając 21 \n Gra składa się z 10 tur. ");
-        System.out.println(" h - Dobiera kartę \n s - Nie dobiera karty");
-        System.out.println("\n Zaczynasz ze 100$");
+        System.out.println("Sterowanie:");
+        System.out.println(" H - Dobiera kartę \n S - Nie dobiera karty [PASS]");
+        System.out.println("\n Zaczynasz ze 150$");
 
-        while (NumerGry <10){
-            int n1 = rndRange(1,14); 
-            System.out.println("\n\n [Rozegranie] Wylosowana karta: " + n1);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\n Podaj swój pseudonim");
+        DanneGracza nick= new DanneGracza();
+        //nick.setNick("gracz");
+        DanneGracza.nick =scanner.nextLine();
+
+
+
+
+        while (NumerGry <10) {
+            int n1 = rndRange(1,14);
+
+            System.out.println("\n");
+            System.out.println("Tura " + (Tura.Liczba + NumerGry));
+            System.out.println ("[Rozegranie] Wylosowana karta: " + n1);
+
 
             int total = n1;
 
             while (total < 21)
             {
-                Scanner scanner = new Scanner(System.in);
-
-                System.out.println("h [hit] Czy s [stand]: ");
+                System.out.println("H [hit] Czy S [stand]: ");
                 String input = scanner.nextLine();
 
-                if (input.endsWith("h"))
+                if (input.endsWith("h") || input.endsWith("H"))
                 {
                     int n2 = rndRange(1,14);
                     System.out.println("Dobrana karta: " + n2);
                     total = total + n2;
 
                 }
-                if (input.endsWith("s"))
+                if (input.endsWith("s") || input.endsWith("S"))
                 {
                     break;
                 }
@@ -66,11 +79,17 @@ public class Main extends RandomoweNumery
             }
             System.out.println("końcowa suma punktów w turze: " + total);
 
-            NumerGry++; //Koniec pentli
+            if (wynik > 0){
+                NumerGry++; //Koniec pentli
+            }
+            if (wynik <= 0){
+                break;
+            }
 
         }
 
         System.out.println("\n koniec gry! \n bilans: $" + wynik);
+        System.out.println(nick.getNick());
 
     }
 
