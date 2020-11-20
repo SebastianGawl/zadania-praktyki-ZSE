@@ -13,6 +13,5 @@ public class DanneGracza {
             System.out.println("Pseudonim musi zawierać więcej liter niż 3");
         }
 
-
     }
 }

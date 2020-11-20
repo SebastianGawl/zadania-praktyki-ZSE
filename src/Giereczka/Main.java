@@ -88,8 +88,10 @@ public class Main extends RandomoweNumery
 
         }
 
-        System.out.println("\n koniec gry! \n bilans: $" + wynik);
+        System.out.println("\n koniec gry!");
         System.out.println(nick.getNick());
+        System.out.println("Kończy z wygraną : $" + wynik);
+
 
     }
 
